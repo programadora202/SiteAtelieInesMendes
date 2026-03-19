@@ -1,0 +1,115 @@
+:root { /*define as variáveis para facilitar a criação de comandos*/
+    --lilas: #baa6e9;
+    --roxo: #5e43a1;
+}
+
+* { /*aplica os comandos em toda a tag HTML*/
+    margin: 0;  /*margens externas*/
+    padding: 0; /*espaçamento entre os conteúdos*/
+    box-sizing: border-box; /*evita sobreposição de elementos*/
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8e6f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--lilas);
+    padding: 20px;
+    text-align: center; 
+    width: 100%;
+    padding-bottom: 0.5rem;
+    margin-bottom: 4rem;
+}
+
+.logo {
+    width: 15rem;
+    height:8rem;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*4 produtos por linha*/
+    gap: 1.5rem; /*espaçamento entre grades*/
+    padding: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+  
+.product {
+    border: 1px solid var(--roxo);
+    box-shadow: 4px 4px 10px var(--roxo);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+  
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product h2 {
+    margin-top: 0.8rem;
+}
+  
+.product p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    margin-bottom: 1rem;
+    color: #555;
+}
+  
+.button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+  
+.button:hover {
+    background-color: var(--lilas);
+    color: var(--roxo);
+    cursor: pointer;
+}
+
+.button:active {
+    cursor: grabbing;
+}
+  
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: var(--lilas);
+    color: var(--roxo);
+    text-align: center;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+/*responsividade para diferentes tamanhos de tela*/
+@media (max-width: 992px) {
+    .products {
+      grid-template-columns: repeat(2, 1fr); /*2 produtos por linha*/
+    }
+}
+  
+@media (max-width: 576px) {
+    .products {
+      grid-template-columns: 1fr; /*1 produto por linha*/
+    }
+} 
